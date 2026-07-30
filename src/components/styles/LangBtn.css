@@ -1,8 +1,15 @@
 .langbtn{
     height: 100vh;
-    width: 20px;
+    width: 30px;
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.langbtn button{
+    background-color: var(--accent);
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
 }

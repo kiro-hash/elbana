@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 0 20px;
+  padding: 0 8px 0 8px;
   border-radius: 10px;
   width: 90%;
   max-height: 50px;
@@ -22,9 +22,9 @@
   -webkit-backdrop-filter: blur(12px);
 }
 
-.logo{
-    width: 90px;
-    margin-top: 5px;
+.logo {
+  width: 100px;
+  margin-top: 5px;
 }
 
 .links {
@@ -38,4 +38,43 @@
   text-decoration: none;
   color: var(--text);
   font-family: var(--heading);
+}
+
+.menubtn {
+  display: none;
+}
+.links .primarybtn{
+  display: none;
+}
+@media (max-width: 700px) {
+  .links {
+    display: none;
+  }
+  .primarybtn {
+    display: none;
+  }
+  .menubtn {
+    display: block;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 80px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 40%;
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
+    right: 1%;
+  }
+  .menu .primarybtn{
+    display: block;
+  }
 }
