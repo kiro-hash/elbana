@@ -10,28 +10,22 @@
 .nav {
     width: min(1200px,92%);
     height: 70px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding-inline: 25px;
-
     border-radius: 18px;
-
     background: rgba(255,255,255,.08);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-
     border: 1px solid rgba(255,255,255,.15);
-
     box-shadow:
         0 15px 35px rgba(0,0,0,.15),
         inset 0 1px rgba(255,255,255,.15);
 }
 
 .logo{
-    width:95px;
+    width:80px;
 }
 
 .links{
@@ -55,13 +49,13 @@
     left:50%;
     width:0;
     height:2px;
-    background:#00bfff;
+    background:#17571e;
     transition:.35s;
     transform:translateX(-50%);
 }
 
 .link:hover{
-    color:#00bfff;
+    color:#17571e;
 }
 
 .link:hover::after{

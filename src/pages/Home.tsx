@@ -3,38 +3,104 @@ import { useTranslation } from "react-i18next";
 import products from "../data/products";
 import NavBar from "../components/NavBar";
 import LangBtn from "../components/LangBtn";
-import heroimg from "../assets/heroimg.jpg"
+import heroimg from "../assets/heroimg.png";
 import ProductCard from "../components/ProductCard";
-import "./styles/Home.css"
+import "./styles/Home.css";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import i18n from "../i18n";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(useGSAP);
 const Home = () => {
   const { t } = useTranslation();
 
   const [pid, setPid] = useState(0);
 
   const handelproductinc = () => {
-    setPid((prev) => (prev + 1) % products.length);
+    gsap.to(".pc", {
+      x: -300,
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.4,
+      ease: "power2.in",
+      onComplete: () => {
+        setPid((prev) => (prev + 1) % products.length);
+
+        gsap.fromTo(
+          ".pc",
+          {
+            x: 300,
+            opacity: 0,
+            scale: 0.8,
+          },
+          {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+        );
+      },
+    });
   };
 
   const handelproductdec = () => {
-    setPid((prev) => (prev - 1 + products.length) % products.length);
+    gsap.to(".pc", {
+      x: 300,
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.4,
+      ease: "power2.in",
+      onComplete: () => {
+        setPid(
+          (prev) =>
+            (prev - 1 + products.length) % products.length,
+        );
+
+        gsap.fromTo(
+          ".pc",
+          {
+            x: -300,
+            opacity: 0,
+            scale: 0.8,
+          },
+          {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+        );
+      },
+    });
   };
-  //edits of yakot
 
   return (
     <>
-    
       <NavBar />
       <LangBtn />
 
       <div className="hero">
         <img src={heroimg} alt="" />
         <div className="hero-content">
-          <h1>ElBanna</h1>
+          <h1>
+            Built for Strength. Engineered for Performance.
+          </h1>
+          <p>
+            ElBanna is a trusted manufacturer of premium
+            tuk-tuk rims, delivering exceptional durability,
+            precision, and reliability. Designed to perform
+            under demanding conditions, our products are
+            built to keep your journey moving.
+          </p>
+          <Link to="/products" className="primarybtn">
+            Explore Products
+          </Link>
         </div>
       </div>
 
@@ -42,26 +108,61 @@ const Home = () => {
         <h1>{t("products")}</h1>
 
         <div className="productscont">
-          <button onClick={handelproductdec} className="pbtn">
-            {i18n.language==="ar"?<ChevronRight />:<ChevronLeft />}
+          <button
+            onClick={handelproductdec}
+            className="pbtn"
+          >
+            {i18n.language === "ar" ? (
+              <ChevronRight />
+            ) : (
+              <ChevronLeft />
+            )}
           </button>
 
-          <ProductCard
-            img={products[pid].img}
-            name={t(products[pid].name)}
-            desc={t(products[pid].desc)}
-          />
+          <div className="pc">
+            <ProductCard
+              img={products[pid].img}
+              name={t(products[pid].name)}
+              desc={t(products[pid].desc)}
+            />
+          </div>
 
-          <button onClick={handelproductinc} className="pbtn">
-            {i18n.language==="ar"?<ChevronLeft />:<ChevronRight />}
+          <button
+            onClick={handelproductinc}
+            className="pbtn"
+          >
+            {i18n.language === "ar" ? (
+              <ChevronLeft />
+            ) : (
+              <ChevronRight />
+            )}
           </button>
-          <Link className="sm primarybtn" to={"/products"}>Show More</Link>
+          <Link className="sm primarybtn" to={"/products"}>
+            Show More
+          </Link>
         </div>
       </div>
-      <div className="about">
+      <div className="aboutcont">
         <h1>About Us</h1>
+        <div className="about">
+          <div className="text">
+            <p>
+              At ElBanna, we specialize in manufacturing
+              high-quality tuk-tuk rims designed to deliver
+              exceptional durability, reliability, and
+              performance. With a strong commitment to
+              precision engineering and premium materials,
+              we produce products that meet the highest
+              standards of quality and safety.
+            </p>
+            <Link className="primarybtn" to={"/about"}>
+              Lern More
+            </Link>
+          </div>
+          <img src={heroimg} alt="" />
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

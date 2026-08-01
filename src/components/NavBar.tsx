@@ -1,17 +1,39 @@
 import "./styles/NavBar.css";
 import { Link } from "react-router-dom";
-import logo from "/logo.png";
+// import logo from "/logo.png";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import gnt from "../assets/gnt.png"
+
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 const NavBar = () => {
   const [isopened, setisopened] = useState(false);
   const { t } = useTranslation();
 
+  useGSAP(()=>{
+    gsap.fromTo(".logo",{
+      x:-600
+    },{
+      x:0,
+      rotate:283
+    })
+    gsap.fromTo(".links",{
+      opacity:0
+    },{
+      opacity:1
+    })
+  })
+
   return (
     <div className="navbar">
       <div className="nav">
-        <img className="logo" src={logo} alt="Logo" />
+        <img className="logo" src={gnt} alt="Logo" />
 
         <div className={`links ${isopened ? "menu" : ""}`}>
           <Link className="link" to="/" onClick={() => setisopened(false)}>
@@ -45,7 +67,7 @@ const NavBar = () => {
           <span className={isopened ? "line active2" : "line"}></span>
         </button>
 
-        <Link className="link primarybtn desktop-contact" to="/contact">
+        <Link className="link  desktop-contact" to="/contact">
           {t("contact")}
         </Link>
       </div>
