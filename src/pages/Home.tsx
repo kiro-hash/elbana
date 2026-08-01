@@ -31,6 +31,9 @@ const Home = () => {
 
       <div className="hero">
         <img src={heroimg} alt="" />
+        <div className="hero-content">
+          <h1>ElBanna</h1>
+        </div>
       </div>
 
       <div className="products">

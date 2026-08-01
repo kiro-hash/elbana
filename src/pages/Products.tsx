@@ -11,7 +11,7 @@ const Products = () => {
   const {t} = useTranslation();
   const [search, setsearch] = useState("");
   const filteredp = products.filter((product) =>
-    product.name
+    t(product.name)
       .toLowerCase()
       .includes(search.toLowerCase()),
   );
