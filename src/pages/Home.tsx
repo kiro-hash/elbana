@@ -23,9 +23,11 @@ const Home = () => {
   const handelproductdec = () => {
     setPid((prev) => (prev - 1 + products.length) % products.length);
   };
+  //edits of yakot
 
   return (
     <>
+    
       <NavBar />
       <LangBtn />
 
