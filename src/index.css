@@ -35,6 +35,7 @@ body{
   margin: 0;
   background: #111512;
   color: #e8ece6;
+  overflow-x: hidden;
 }
 
 .primarybtn{
@@ -42,6 +43,8 @@ body{
   padding: 5px 10px 5px 10px;
   border-radius: 10px;
   border: none;
+  text-decoration: none;
+  color: white;
   font-size: larger;
 }
 

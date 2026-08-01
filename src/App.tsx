@@ -6,6 +6,7 @@ import {
 import Home from "./pages/Home";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
+import Products from "./pages/Products";
 
 function App() {
   const {i18n} =useTranslation();
@@ -18,6 +19,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products/>}/>
       </Routes>
     </BrowserRouter>
   );

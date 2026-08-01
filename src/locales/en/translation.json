@@ -1,7 +1,22 @@
 {
+  "nav": "Navigation",
   "home": "Home",
   "about": "About",
-  "products":"Products",
+  "products": "Products",
   "contact": "Contact",
-  "menu":"Menu"
+  "menu": "Menu",
+
+  "follow": "Follow",
+  "contactus": "Contact Us",
+  "rights": "All Rights Reserved",
+  "email": "Email",
+  "phone": "Phone",
+  "address": "Address",
+
+  "search":"Search Products...",
+  
+  "p1":"product1",
+  "p1desc":"product1 description",
+  "p2":"product2",
+  "p2desc":"product2 description"
 }

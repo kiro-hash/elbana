@@ -1,80 +1,180 @@
 .navbar {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
+    position: fixed;
+    top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
 }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 8px 0 8px;
-  border-radius: 10px;
-  width: 90%;
-  max-height: 50px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
+    width: min(1200px,92%);
+    height: 70px;
 
-.logo {
-  width: 100px;
-  margin-top: 5px;
-}
-
-.links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-}
-
-.link {
-  text-decoration: none;
-  color: var(--text);
-  font-family: var(--heading);
-}
-
-.menubtn {
-  display: none;
-}
-.links .primarybtn{
-  display: none;
-}
-@media (max-width: 700px) {
-  .links {
-    display: none;
-  }
-  .primarybtn {
-    display: none;
-  }
-  .menubtn {
-    display: block;
-  }
-  .menu {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 80px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    width: 50%;
-    border-radius: 10px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(12px);
-    right: 1%;
+
+    padding-inline: 25px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.15),
+        inset 0 1px rgba(255,255,255,.15);
+}
+
+.logo{
+    width:95px;
+}
+
+.links{
+    display:flex;
+    align-items:center;
+    gap:45px;
+}
+
+.link{
+    position:relative;
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.link::after{
+    content:"";
+    position:absolute;
+    bottom:-6px;
+    left:50%;
+    width:0;
+    height:2px;
+    background:#00bfff;
+    transition:.35s;
+    transform:translateX(-50%);
+}
+
+.link:hover{
+    color:#00bfff;
+}
+
+.link:hover::after{
+    width:100%;
+}
+
+.desktop-contact{
+    display:flex;
+}
+
+.mobile-contact{
+    display:none;
+}
+
+/* ============================= */
+/* Menu Button */
+/* ============================= */
+
+.menubtn{
+    display:none;
+
+    width:48px;
+    height:48px;
+
+    border:none;
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    cursor:pointer;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap:6px;
+
+    transition:.3s;
+}
+
+.menubtn:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.line{
+    width:22px;
+    height:2px;
+    background:white;
+    transition:.35s;
+}
+
+.active1{
+    transform:translateY(8px) rotate(45deg);
+}
+
+.active2{
+    transform:translateY(-8px) rotate(-45deg);
+}
+
+.hide{
+    opacity:0;
+}
+
+/* ============================= */
+/* Mobile */
+/* ============================= */
+
+@media(max-width:700px){
+
+  .nav{
+    width: 70%;
   }
-  .menu .primarybtn{
-    display: block;
-  }
+
+    .desktop-contact{
+        display:none;
+    }
+
+    .menubtn{
+        display:flex;
+    }
+    .links{
+        position:absolute;
+        top:90px;
+        right:0;
+        width:260px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:22px;
+        padding:30px;
+        border-radius:22px;
+        background:rgba(20,20,30,.75);
+        backdrop-filter:blur(18px);
+        border:1px solid rgba(255,255,255,.15);
+        box-shadow:0 20px 40px rgba(0,0,0,.35);
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-20px) scale(.95);
+        transition:
+        opacity .35s,
+        transform .35s,
+        visibility .35s;
+    }
+
+    .menu{
+
+        opacity:1;
+        visibility:visible;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+    .mobile-contact{
+        display:flex;
+    }
 }

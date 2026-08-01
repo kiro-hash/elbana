@@ -1,25 +1,53 @@
 import "./styles/NavBar.css";
-
 import { Link } from "react-router-dom";
-
-import logo from "/logo.png"
+import logo from "/logo.png";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+
 const NavBar = () => {
-  const [isopened,setisopened]=useState(false);
-  const {t} = useTranslation();
+  const [isopened, setisopened] = useState(false);
+  const { t } = useTranslation();
+
   return (
     <div className="navbar">
       <div className="nav">
-        <img className="logo" src={logo} alt="" />
-        <div className={`links  ${isopened?"menu":""}`}>
-          <Link className="link" to={"/"}>{t("home")}</Link>
-          <Link className="link" to={"/about"}>{t("about")}</Link>
-          <Link className="link" to={"/products"}>{t("products")}</Link>
-          <Link className="link primarybtn" to={"/contact"}>{t("contact")}</Link>
+        <img className="logo" src={logo} alt="Logo" />
+
+        <div className={`links ${isopened ? "menu" : ""}`}>
+          <Link className="link" to="/" onClick={() => setisopened(false)}>
+            {t("home")}
+          </Link>
+
+          <Link className="link" to="/about" onClick={() => setisopened(false)}>
+            {t("about")}
+          </Link>
+
+          <Link className="link" to="/products" onClick={() => setisopened(false)}>
+            {t("products")}
+          </Link>
+
+          <Link
+            className="link primarybtn mobile-contact"
+            to="/contact"
+            onClick={() => setisopened(false)}
+          >
+            {t("contact")}
+          </Link>
         </div>
-        <button className="menubtn primarybtn" onClick={()=>{setisopened(!isopened)}}>{t("menu")}</button>
-        <Link className="link primarybtn" to={"/contact"}>{t("contact")}</Link>
+
+        <button
+          className="menubtn"
+          onClick={() => setisopened(!isopened)}
+          aria-label="Menu"
+        >
+          <span className={isopened ? "line active1" : "line"}></span>
+          <span className={isopened ? "line hide" : "line"}></span>
+          <span className={isopened ? "line active2" : "line"}></span>
+        </button>
+
+        <Link className="link primarybtn desktop-contact" to="/contact">
+          {t("contact")}
+        </Link>
       </div>
     </div>
   );

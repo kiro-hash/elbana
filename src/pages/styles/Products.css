@@ -1,0 +1,159 @@
+.productsp{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:relative;
+}
+
+/* ============================= */
+/* Search Input */
+/* ============================= */
+
+.productsp input{
+
+    width:min(420px,92%);
+    height:58px;
+
+    margin:120px auto 60px;
+    padding:0 26px;
+
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.03)
+        );
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    color:#fff;
+    font-size:1rem;
+    font-weight:500;
+    letter-spacing:.3px;
+
+    outline:none;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.08),
+        0 15px 40px rgba(0,0,0,.25);
+
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        box-shadow .45s,
+        border-color .45s,
+        background .45s;
+
+}
+
+/* Placeholder */
+
+.productsp input::placeholder{
+
+    color:rgba(255,255,255,.45);
+    letter-spacing:.6px;
+
+    transition:.4s;
+}
+
+/* Hover */
+
+.productsp input:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(255,255,255,.2);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.11),
+            rgba(255,255,255,.05)
+        );
+
+    box-shadow:
+
+        inset 0 1px rgba(255,255,255,.1),
+
+        0 20px 45px rgba(0,0,0,.3),
+
+        0 0 25px rgba(255,255,255,.05);
+
+}
+
+/* Focus */
+
+.productsp input:focus{
+
+    transform:translateY(-6px) scale(1.02);
+
+    border-color:#7dff75;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.15),
+            rgba(255,255,255,.06)
+        );
+
+    box-shadow:
+
+        inset 0 1px rgba(255,255,255,.15),
+
+        0 0 0 4px rgba(125,255,117,.15),
+
+        0 0 25px rgba(125,255,117,.25),
+
+        0 20px 50px rgba(0,0,0,.35);
+
+}
+
+/* Placeholder Animation */
+
+.productsp input:focus::placeholder{
+
+    transform:translateX(12px);
+
+    opacity:.25;
+
+}
+
+/* Active */
+
+.productsp input:active{
+
+    transform:scale(.99);
+
+}
+
+/* Autofill */
+
+.productsp input:-webkit-autofill{
+
+    -webkit-text-fill-color:#fff;
+
+    transition:background-color 9999s;
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.productsp input{
+
+    width:50%;
+    height:54px;
+
+    margin:100px  40px;
+
+    font-size:.95rem;
+
+    border-radius:16px;
+
+}
+
+}

@@ -10,8 +10,14 @@ const products: Product[] = [
   {
     id:0,
     img: p1,
-    name:"product1",
-    desc:"product 1 desc"
+    name:"p1",
+    desc:"p1desc"
+  },
+  {
+    id:1,
+    img: p1,
+    name:"p2",
+    desc:"p2desc"
   },
 ];
 
