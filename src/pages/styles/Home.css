@@ -214,9 +214,7 @@
   .sm {
     display: none;
   }
-  .aboutcont{
-    height: 60vh;
-  }
+  
   .about p {
     min-width: 80%;
   }

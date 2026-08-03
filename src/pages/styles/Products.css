@@ -14,7 +14,7 @@
     width:min(420px,92%);
     height:58px;
 
-    margin:120px auto 60px;
+    margin:120px 20px 20px 20px;
     padding:0 26px;
 
     border-radius:18px;
@@ -49,7 +49,6 @@
 
 }
 
-/* Placeholder */
 
 .productsp input::placeholder{
 
@@ -59,7 +58,6 @@
     transition:.4s;
 }
 
-/* Hover */
 
 .productsp input:hover{
 
@@ -84,7 +82,6 @@
 
 }
 
-/* Focus */
 
 .productsp input:focus{
 
@@ -111,7 +108,6 @@
 
 }
 
-/* Placeholder Animation */
 
 .productsp input:focus::placeholder{
 
@@ -121,7 +117,6 @@
 
 }
 
-/* Active */
 
 .productsp input:active{
 
@@ -129,7 +124,6 @@
 
 }
 
-/* Autofill */
 
 .productsp input:-webkit-autofill{
 
@@ -139,17 +133,17 @@
 
 }
 
-/* Mobile */
-
 @media (max-width:768px){
 
 .productsp input{
 
     width:50%;
     height:54px;
-    margin:120px  40px;
     font-size:.95rem;
     border-radius:16px;
+}
+.productsp {
+    margin-bottom: 30px;
 }
 
 }
