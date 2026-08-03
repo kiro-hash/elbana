@@ -9,7 +9,7 @@ import Seo from "../components/Seo";
 const Contact = () => {
   const [message, setMessage] = useState("");
 
-  const phoneNumber = "201023236000";
+  const phoneNumber = "201003393938";
 
   const { t, i18n } = useTranslation();
 
