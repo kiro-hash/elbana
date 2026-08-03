@@ -3,22 +3,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    width: 90%;
+
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
+
 .about-container {
-    width: min(1100px, 100%);
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
     text-align: center;
 }
 
 .about-subtitle {
     display: inline-block;
+    padding: 8px 18px;
+
     color: var(--accent);
     background: var(--accent-bg);
     border: 1px solid var(--accent-border);
-    padding: 8px 18px;
     border-radius: 50px;
+
     font-size: .9rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -27,6 +40,7 @@
 
 .about h1 {
     margin: 24px 0 20px;
+
     color: var(--bg);
     font-size: clamp(2.3rem, 5vw, 4.2rem);
     line-height: 1.15;
@@ -34,26 +48,39 @@
 }
 
 .about-text {
-    max-width: 850px;
-    margin: auto;
+    width: min(850px, 100%);
+    margin: 0 auto;
+
     color: var(--border);
     font-size: 1.05rem;
     line-height: 1.9;
 }
 
 .about-grid {
+    width: 100%;
+
     margin-top: 70px;
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
+
+    justify-items: center;
 }
 
 .about-card {
-    background:var(--accent-bg);
+    width: 100%;
+
+    background: var(--accent-bg);
     border: 1px solid var(--accent-border);
     border-radius: 20px;
-    padding: 40px 25px;
+
+    padding: 35px 25px;
+
+    box-sizing: border-box;
     box-shadow: var(--shadow);
+
+    overflow: hidden;
     transition: .35s ease;
 }
 
@@ -63,9 +90,10 @@
 }
 
 .about-card h2 {
+    margin-bottom: 10px;
+
     color: var(--accent);
     font-size: 3rem;
-    margin-bottom: 10px;
 }
 
 .about-card span {
@@ -74,19 +102,29 @@
 }
 
 .mission {
+    width: 100%;
+
     margin-top: 80px;
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
 }
 
 .mission div {
+    width: 100%;
+
     background: var(--accent-bg);
     border: 1px solid var(--accent-border);
     border-radius: 20px;
+
     padding: 35px;
+
+    box-sizing: border-box;
     box-shadow: var(--shadow);
+
     text-align: start;
+    overflow: hidden;
     transition: .35s ease;
 }
 
@@ -96,8 +134,9 @@
 }
 
 .mission h3 {
-    color: var(--accent);
     margin-bottom: 15px;
+
+    color: var(--accent);
     font-size: 1.6rem;
 }
 
@@ -108,23 +147,73 @@
 
 @media (max-width: 900px) {
 
-    .about {
-        padding: 120px 20px 70px;
+    .about{
+        padding-top: 100px;
+        padding-bottom: 50px;
     }
 
-    .about-grid {
+    .about-container{
+        width: 100%;
+        padding: 0;
+    }
+
+    .about-subtitle{
+        font-size: .75rem;
+        padding: 7px 16px;
+        letter-spacing: 1px;
+    }
+
+    .about h1{
+        margin: 18px 0;
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .about-text{
+        width: 100%;
+        font-size: .95rem;
+        line-height: 1.8;
+    }
+
+    .about-grid{
+        margin-top: 45px;
         grid-template-columns: 1fr;
+        gap: 18px;
     }
 
-    .mission {
+    .about-card{
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
+
+    .about-card h2{
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+    }
+
+    .about-card span{
+        font-size: .95rem;
+    }
+
+    .mission{
+        margin-top: 45px;
         grid-template-columns: 1fr;
+        gap: 18px;
     }
 
-    .about h1 {
-        font-size: 2.6rem;
+    .mission div{
+        padding: 24px 18px;
+        border-radius: 16px;
     }
 
-    .about-text {
-        font-size: 1rem;
+    .mission h3{
+        font-size: 1.25rem;
+        margin-bottom: 10px;
     }
+
+    .mission p{
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
 }
