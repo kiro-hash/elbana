@@ -27,7 +27,7 @@ const Footer = () => {
         </p>
 
         <p>
-          <strong>{t("email")}:</strong> info@example.com
+          <strong></strong> info@example.com
         </p>
 
         <p>

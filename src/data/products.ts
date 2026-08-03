@@ -1,4 +1,4 @@
-import p1 from "/logo.png"
+import p1 from "../assets/gnt.png"
 export interface Product {
   id:number;
   img: string;

@@ -9,19 +9,19 @@ import "./styles/Home.css";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import i18n from "../i18n";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 const Home = () => {
-  const { t } = useTranslation();
+  const { t ,i18n} = useTranslation();
+  const distance = window.innerWidth < 768 ? 120 : 300;
 
   const [pid, setPid] = useState(0);
 
   const handelproductinc = () => {
     gsap.to(".pc", {
-      x: -300,
+      x: -distance,
       opacity: 0,
       scale: 0.8,
       duration: 0.4,
@@ -32,7 +32,7 @@ const Home = () => {
         gsap.fromTo(
           ".pc",
           {
-            x: 300,
+            x: distance,
             opacity: 0,
             scale: 0.8,
           },
@@ -50,7 +50,7 @@ const Home = () => {
 
   const handelproductdec = () => {
     gsap.to(".pc", {
-      x: 300,
+      x: distance,
       opacity: 0,
       scale: 0.8,
       duration: 0.4,
@@ -64,7 +64,7 @@ const Home = () => {
         gsap.fromTo(
           ".pc",
           {
-            x: -300,
+            x: -distance,
             opacity: 0,
             scale: 0.8,
           },
@@ -85,21 +85,15 @@ const Home = () => {
       <NavBar />
       <LangBtn />
 
-      <div className="hero">
+      <div className={`hero ${i18n.language==="ar"?"inversehero":""}`}>
         <img src={heroimg} alt="" />
         <div className="hero-content">
-          <h1>
-            Built for Strength. Engineered for Performance.
-          </h1>
-          <p>
-            ElBanna is a trusted manufacturer of premium
-            tuk-tuk rims, delivering exceptional durability,
-            precision, and reliability. Designed to perform
-            under demanding conditions, our products are
-            built to keep your journey moving.
-          </p>
+          <h1>{t("heroTitle")}</h1>
+
+          <p>{t("heroDescription")}</p>
+
           <Link to="/products" className="primarybtn">
-            Explore Products
+            {t("exploreProducts")}
           </Link>
         </div>
       </div>
@@ -119,12 +113,14 @@ const Home = () => {
             )}
           </button>
 
-          <div className="pc">
-            <ProductCard
-              img={products[pid].img}
-              name={t(products[pid].name)}
-              desc={t(products[pid].desc)}
-            />
+          <div className="product-slider">
+            <div className="pc">
+              <ProductCard
+                img={products[pid].img}
+                name={t(products[pid].name)}
+                desc={t(products[pid].desc)}
+              />
+            </div>
           </div>
 
           <button

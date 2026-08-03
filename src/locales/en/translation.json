@@ -6,6 +6,11 @@
   "contact": "Contact",
   "menu": "Menu",
 
+  
+  "heroTitle": "Built for Strength. Engineered for Performance.",
+  "heroDescription": "ElBanna is a trusted manufacturer of premium tuk-tuk rims, delivering exceptional durability, precision, and reliability. Designed to perform under demanding conditions, our products are built to keep your journey moving.",
+  "exploreProducts": "Explore Products",
+
   "follow": "Follow",
   "contactus": "Contact Us",
   "rights": "All Rights Reserved",
@@ -18,5 +23,9 @@
   "p1":"product1",
   "p1desc":"product1 description",
   "p2":"product2",
-  "p2desc":"product2 description"
+  "p2desc":"product2 description",
+
+
+  "sendbtn":"Send Via Whatsapp",
+  "contactplaceholder":"Write a message..."
 }

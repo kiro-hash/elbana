@@ -1,5 +1,7 @@
 .footer {
     width: 100%;
+    box-sizing: border-box;
+
     background: linear-gradient(
         180deg,
         #202820 0%,
@@ -13,12 +15,13 @@
     display: grid;
     grid-template-columns: 1.6fr 1fr 1fr 1fr;
     gap: 45px;
-    padding-top:50px ;
-    padding-bottom: 20px;
+
+    padding: 50px 7% 20px;
 
     color: #f8f8f8;
-
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
 }
 
 /* ========================= */
@@ -33,6 +36,8 @@
 
 .intro img {
     width: 100px;
+    max-width: 100%;
+    display: block;
     filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.25));
 }
 
@@ -75,6 +80,7 @@
     color: #cfd6cf;
     transition: color .3s ease, transform .3s ease;
     font-size: .95rem;
+    word-break: break-word;
 }
 
 .fnav a:hover,
@@ -92,6 +98,7 @@
     color: #d0d7cf;
     line-height: 1.6;
     font-size: .92rem;
+    word-break: break-word;
 }
 
 /* ========================= */
@@ -109,7 +116,7 @@
     text-align: center;
 
     color: #bfc5bf;
-    font-size: 0.85rem;
+    font-size: .85rem;
 }
 
 /* ========================= */
@@ -119,8 +126,8 @@
 @media (max-width: 992px) {
     .footer {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        padding: 30px 7% 18px;
+        gap: 35px;
+        padding: 40px 6% 20px;
     }
 }
 
@@ -130,10 +137,11 @@
 
 @media (max-width: 768px) {
     .footer {
+        width: 100%;
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 30px;
+        padding: 40px 24px 20px;
         text-align: center;
-        padding: 30px 7% 18px;
     }
 
     .intro,
@@ -151,46 +159,5 @@
     .medialinks a:hover,
     .contact a:hover {
         transform: none;
-    }
-}
-
-/* ========================= */
-/* Tablet */
-/* ========================= */
-
-@media (max-width: 992px) {
-    .footer {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-    }
-}
-
-/* ========================= */
-/* Mobile */
-/* ========================= */
-
-@media (max-width: 768px) {
-    .footer {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        text-align: center;
-        padding: 50px 8% 25px;
-    }
-
-    .intro,
-    .fnav,
-    .medialinks,
-    .contact {
-        align-items: center;
-    }
-
-    .fnav a:hover,
-    .medialinks a:hover,
-    .contact a:hover {
-        transform: none;
-    }
-
-    .intro img {
-        width: 100px;
     }
 }
