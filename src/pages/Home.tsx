@@ -11,10 +11,11 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Seo from "../components/Seo";
 
 gsap.registerPlugin(useGSAP);
 const Home = () => {
-  const { t ,i18n} = useTranslation();
+  const { t, i18n } = useTranslation();
   const distance = window.innerWidth < 768 ? 120 : 200;
 
   const [pid, setPid] = useState(0);
@@ -82,10 +83,25 @@ const Home = () => {
 
   return (
     <>
+      <Seo
+        title={
+          i18n.language === "ar"
+            ? "شركة البنا | تصنيع جنوط التوك توك"
+            : "ElBanna | Premium Tuk Tuk Rim Manufacturer"
+        }
+        description={
+          i18n.language === "ar"
+            ? "شركة البنا متخصصة في تصنيع جنوط التوك توك عالية الجودة."
+            : "ElBanna specializes in manufacturing premium tuk tuk rims."
+        }
+        path="/"
+      />
       <NavBar />
       <LangBtn />
 
-      <div className={`hero ${i18n.language==="ar"?"inversehero":""}`}>
+      <div
+        className={`hero ${i18n.language === "ar" ? "inversehero" : ""}`}
+      >
         <img src={heroimg} alt="" />
         <div className="hero-content">
           <h1>{t("heroTitle")}</h1>
@@ -142,9 +158,7 @@ const Home = () => {
         <h1>{t("about")}</h1>
         <div className="about">
           <div className="text">
-            <p>
-              {t("aboutDescription")}
-            </p>
+            <p>{t("aboutDescription")}</p>
             <Link className="primarybtn" to={"/about"}>
               {t("learnMore")}
             </Link>

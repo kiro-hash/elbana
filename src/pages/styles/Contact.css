@@ -9,7 +9,7 @@
 .contact-card {
   width: 100%;
   max-width: 550px;
-  background: #fff;
+  background: var(--accent-bg);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -18,7 +18,7 @@
 .contact-card h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #222;
+  color: var(--bg);
 }
 
 .contact-card textarea {
@@ -29,7 +29,7 @@
   border-radius: 10px;
   resize: vertical;
   font-size: 16px;
-  background-color: var(--accent-bg);
+  background-color: var(--bg);
   color: #222;
   outline: none;
   font-weight: bold;

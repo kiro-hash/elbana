@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 import LangBtn from "../components/LangBtn";
 import Footer from "../components/Footer";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo";
 
 const Contact = () => {
   const [message, setMessage] = useState("");
@@ -28,84 +28,22 @@ const Contact = () => {
 
   return (
     <>
-      <NavBar/>
+      <Seo
+        title={
+          i18n.language === "ar"
+            ? "اتصل بنا | شركة البنا"
+            : "Contact | ElBanna"
+        }
+        description={
+          i18n.language === "ar"
+            ? "تواصل مع شركة البنا للاستفسارات والشراكات."
+            : "Contact ElBanna for inquiries and business partnerships."
+        }
+        path="/contact"
+      />
+      <NavBar />
       <LangBtn />
-      <Helmet>
-        <html lang={i18n.language} />
 
-        <title>
-          {i18n.language === "ar"
-            ? "اتصل بنا | مصنع الصفوة"
-            : "Contact | Al Safwa Factory"}
-        </title>
-
-        <meta
-          name="description"
-          content={
-            i18n.language === "ar"
-              ? "تواصل مع مصنع الصفوة للاستفسارات، الشراكات، التصدير، وطلبات منتجات الجبن عالية الجودة."
-              : "Contact Al Safwa Factory for inquiries, partnerships, export opportunities, and premium processed cheese products."
-          }
-        />
-
-        <link
-          rel="canonical"
-          href={`https://alsafwafactory.com/${i18n.language}/contact`}
-        />
-
-        <link
-          rel="alternate"
-          hrefLang="ar"
-          href="https://alsafwafactory.com/ar/contact"
-        />
-
-        <link
-          rel="alternate"
-          hrefLang="en"
-          href="https://alsafwafactory.com/en/contact"
-        />
-
-        <link
-          rel="alternate"
-          hrefLang="x-default"
-          href="https://alsafwafactory.com/ar/contact"
-        />
-
-        <meta property="og:type" content="website" />
-
-        <meta
-          property="og:title"
-          content={
-            i18n.language === "ar"
-              ? "اتصل بنا | مصنع الصفوة"
-              : "Contact | Al Safwa Factory"
-          }
-        />
-
-        <meta
-          property="og:description"
-          content={
-            i18n.language === "ar"
-              ? "تواصل مع مصنع الصفوة للاستفسارات، الشراكات، التصدير، وطلبات منتجات الجبن عالية الجودة."
-              : "Contact Al Safwa Factory for inquiries, partnerships, export opportunities, and premium processed cheese products."
-          }
-        />
-
-        <meta
-          property="og:url"
-          content={`https://alsafwafactory.com/${i18n.language}/contact`}
-        />
-
-        <meta
-          property="og:image"
-          content="https://alsafwafactory.com/logo.png"
-        />
-
-        <meta
-          property="og:site_name"
-          content="Al Safwa Factory"
-        />
-      </Helmet>
       <div className="contact-container">
         <div className="contact-card">
           <h2>{t("contact")}</h2>

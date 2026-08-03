@@ -102,6 +102,7 @@
   align-items: center;
 }
 
+
 .productscont {
   display: flex;
   justify-content: center;
@@ -132,6 +133,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.pc .productcard{
+  margin-top: 50px;
 }
 
 .sm {
