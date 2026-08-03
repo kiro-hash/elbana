@@ -31,13 +31,13 @@ const Contact = () => {
       <Seo
         title={
           i18n.language === "ar"
-            ? "اتصل بنا | شركة البنا"
-            : "Contact | ElBanna"
+            ? "اتصل بنا | شركة بنا"
+            : "Contact | banna"
         }
         description={
           i18n.language === "ar"
-            ? "تواصل مع شركة البنا للاستفسارات والشراكات."
-            : "Contact ElBanna for inquiries and business partnerships."
+            ? "تواصل مع شركة بنا للاستفسارات والشراكات."
+            : "Contact banna for inquiries and business partnerships."
         }
         path="/contact"
       />

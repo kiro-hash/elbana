@@ -35,7 +35,7 @@ const Footer = () => {
         </p>
       </div>
       <div className="footer-bottom">
-        © 2026 The ELBANNA Factory. All Rights Reserved.
+        © 2026 The banna Factory. All Rights Reserved.
       </div>
     </div>
   );

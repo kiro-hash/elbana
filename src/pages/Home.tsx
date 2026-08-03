@@ -86,13 +86,13 @@ const Home = () => {
       <Seo
         title={
           i18n.language === "ar"
-            ? "شركة البنا | تصنيع جنوط التوك توك"
-            : "ElBanna | Premium Tuk Tuk Rim Manufacturer"
+            ? "شركة بنا | تصنيع جنوط التوك توك"
+            : "banna | Premium Tuk Tuk Rim Manufacturer"
         }
         description={
           i18n.language === "ar"
-            ? "شركة البنا متخصصة في تصنيع جنوط التوك توك عالية الجودة."
-            : "ElBanna specializes in manufacturing premium tuk tuk rims."
+            ? "شركة بنا متخصصة في تصنيع جنوط التوك توك عالية الجودة."
+            : "banna specializes in manufacturing premium tuk tuk rims."
         }
         path="/"
       />

@@ -22,13 +22,13 @@ const Products = () => {
       <Seo
         title={
           i18n.language === "ar"
-            ? "المنتجات | شركة البنا"
-            : "Products | ElBanna"
+            ? "المنتجات | شركة بنا"
+            : "Products | banna"
         }
         description={
           i18n.language === "ar"
-            ? "استعرض منتجات جنوط التوك توك عالية الجودة من شركة البنا."
-            : "Explore ElBanna's premium tuk tuk rim products."
+            ? "استعرض منتجات جنوط التوك توك عالية الجودة من شركة بنا."
+            : "Explore banna's premium tuk tuk rim products."
         }
         path="/products"
       />

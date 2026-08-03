@@ -14,13 +14,13 @@ const About = () => {
       <Seo
         title={
           i18n.language === "ar"
-            ? "من نحن | شركة البنا"
-            : "About Us | ElBanna"
+            ? "من نحن | شركة بنا"
+            : "About Us | banna"
         }
         description={
           i18n.language === "ar"
-            ? "تعرف على شركة البنا ورسالتها وخبرتها في تصنيع جنوط التوك توك."
-            : "Learn about ElBanna and our expertise in manufacturing premium tuk tuk rims."
+            ? "تعرف على شركة بنا ورسالتها وخبرتها في تصنيع جنوط التوك توك."
+            : "Learn about banna and our expertise in manufacturing premium tuk tuk rims."
         }
         path="/about"
       />

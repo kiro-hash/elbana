@@ -12,9 +12,9 @@ const Seo = ({
   title,
   description,
   path = "",
-  image = "https://elbanna.com/logo.png",
+  image = "https://banna.com/logo.png",
 }: SeoProps) => {
-  const url = `https://elbanna.com${path}`;
+  const url = `https://banna.com${path}`;
 
   return (
     <Helmet>
@@ -28,14 +28,23 @@ const Seo = ({
 
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta
+        property="og:description"
+        content={description}
+      />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
-      <meta property="og:site_name" content="ElBanna" />
+      <meta property="og:site_name" content="banna" />
 
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:card"
+        content="summary_large_image"
+      />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta
+        name="twitter:description"
+        content={description}
+      />
       <meta name="twitter:image" content={image} />
     </Helmet>
   );
