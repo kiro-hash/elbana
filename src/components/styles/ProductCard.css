@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
 
     padding: 32px 28px;
@@ -99,7 +100,7 @@
     .productcard {
         padding: 24px;
         gap: 18px;
-        border-radius: 0;
+        width: 70%;
     }
 
     .productcard img {

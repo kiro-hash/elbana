@@ -129,6 +129,9 @@
 
 .pc {
     will-change: transform;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sm {

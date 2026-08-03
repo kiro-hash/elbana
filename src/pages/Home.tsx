@@ -15,7 +15,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 const Home = () => {
   const { t ,i18n} = useTranslation();
-  const distance = window.innerWidth < 768 ? 120 : 300;
+  const distance = window.innerWidth < 768 ? 120 : 200;
 
   const [pid, setPid] = useState(0);
 
@@ -23,7 +23,7 @@ const Home = () => {
     gsap.to(".pc", {
       x: -distance,
       opacity: 0,
-      scale: 0.8,
+      scale: 0.1,
       duration: 0.4,
       ease: "power2.in",
       onComplete: () => {
@@ -52,7 +52,7 @@ const Home = () => {
     gsap.to(".pc", {
       x: distance,
       opacity: 0,
-      scale: 0.8,
+      scale: 0.1,
       duration: 0.4,
       ease: "power2.in",
       onComplete: () => {
@@ -139,20 +139,14 @@ const Home = () => {
         </div>
       </div>
       <div className="aboutcont">
-        <h1>About Us</h1>
+        <h1>{t("about")}</h1>
         <div className="about">
           <div className="text">
             <p>
-              At ElBanna, we specialize in manufacturing
-              high-quality tuk-tuk rims designed to deliver
-              exceptional durability, reliability, and
-              performance. With a strong commitment to
-              precision engineering and premium materials,
-              we produce products that meet the highest
-              standards of quality and safety.
+              {t("aboutDescription")}
             </p>
             <Link className="primarybtn" to={"/about"}>
-              Lern More
+              {t("learnMore")}
             </Link>
           </div>
           <img src={heroimg} alt="" />
