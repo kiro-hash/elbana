@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import ScrollToTop from "./components/ScrollToTop"
 function App() {
   const {i18n} =useTranslation();
   useEffect(()=>{
@@ -18,6 +19,7 @@ function App() {
   },[i18n.language])
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About/>}/>
