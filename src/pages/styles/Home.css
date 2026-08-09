@@ -149,6 +149,8 @@
 
 .about {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
@@ -170,7 +172,7 @@
   max-width: 1300px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   gap: 80px;

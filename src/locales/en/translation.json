@@ -40,11 +40,23 @@
 
   "search": "Search Products...",
 
-  "p1": "product1",
-  "p1desc": "product1 description",
-  "p2": "product2",
-  "p2desc": "product2 description",
+  "p1": "Sport Red Rim",
+  "p1desc": "A bold red rim with a distinctive sporty design, combining a striking appearance with high durability for strong and reliable performance.",
 
+  "p2": "White Rim",
+  "p2desc": "A high-quality white rim featuring a practical and elegant design, combining durability and precise manufacturing for reliable performance.",
+
+  "p3": "Distinctive Blue Rim",
+  "p3desc": "A modern blue rim with a distinctive finish, offering an ideal combination of durability, performance, and stylish design for tuk-tuk applications.",
+
+  "p4": "Premium Black Rim",
+  "p4desc": "A sleek and durable black rim engineered to provide stability and reliable performance with a high-quality finish.",
+
+  "p5": "Classic White Rim",
+  "p5desc": "A classic white rim with a clean and simple design, featuring durable construction and a quality finish for everyday tuk-tuk use.",
+
+  "p6": "Open White Rim",
+  "p6desc": "A practical open-design white rim offering high durability, precise manufacturing, and convenient installation.",
   "sendbtn": "Send Via Whatsapp",
   "contactplaceholder": "Write a message..."
 }
