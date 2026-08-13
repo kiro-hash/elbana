@@ -12,7 +12,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Seo from "../components/Seo";
-
+// kiro
 gsap.registerPlugin(useGSAP);
 const Home = () => {
   const { t, i18n } = useTranslation();
