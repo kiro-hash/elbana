@@ -16,18 +16,16 @@ const Footer = () => {
         <Link to={"/products"}>{t("products")}</Link>
         <Link to={"/contact"}>{t("contact")}</Link>
       </div>
-      <div className="medialinks">
-        <h2>{t("follow")}</h2>
-      </div>
+      
       <div className="contact">
         <h2>{t("contactus")}</h2>
 
         <p>
-          <strong>{t("phone")}:</strong> +20 123 456 7890
+          <strong>{t("phone")}:</strong> +201003393938
         </p>
 
         <p>
-          <strong></strong> info@example.com
+          <strong>{t("email")}:</strong> amr@bannatyre.com
         </p>
 
         <p>
