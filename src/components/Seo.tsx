@@ -12,9 +12,9 @@ const Seo = ({
   title,
   description,
   path = "",
-  image = "https://banna.com/logo.png",
+  image = "https://bannafac.com/logo.png",
 }: SeoProps) => {
-  const url = `https://banna.com${path}`;
+  const url = `https://bannafac.com${path}`;
 
   return (
     <Helmet>

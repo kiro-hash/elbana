@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bannafac.com/sitemap.xml

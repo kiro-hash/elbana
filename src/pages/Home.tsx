@@ -150,7 +150,7 @@ const Home = () => {
             )}
           </button>
           <Link className="sm primarybtn" to={"/products"}>
-            Show More
+            {t("sm")}
           </Link>
         </div>
       </div>
