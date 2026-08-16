@@ -20,30 +20,35 @@ const products: Product[] = [
     desc: "p1desc",
   },
   {
+    //white
     id: 1,
     img: p2,
     name: "p2",
     desc: "p2desc",
   },
   {
+    //blue
     id: 1,
     img: p3,
     name: "p3",
     desc: "p3desc",
   },
   {
+    //black
     id: 1,
     img: p4,
     name: "p4",
     desc: "p4desc",
   },
   {
+    //red
     id: 1,
     img: p1,
     name: "p5",
     desc: "p5desc",
   },
   {
+    //gray
     id: 1,
     img: p7,
     name: "p7",

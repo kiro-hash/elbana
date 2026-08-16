@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { useTranslation } from "react-i18next";
 import products from "../data/products";
 import NavBar from "../components/NavBar";
@@ -19,6 +19,47 @@ const Home = () => {
   const distance = window.innerWidth < 768 ? 120 : 200;
 
   const [pid, setPid] = useState(0);
+
+  const colorProducts = {
+    blue: 2,
+    red: 4,
+    white: 1,
+    black: 3,
+    gray: 5,
+  };
+
+  const handleColorSelect = (
+    color: keyof typeof colorProducts,
+  ) => {
+    const newIndex = colorProducts[color];
+
+    gsap.to(".pc", {
+      x: -distance,
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.3,
+      ease: "power2.in",
+      onComplete: () => {
+        setPid(newIndex);
+
+        gsap.fromTo(
+          ".pc",
+          {
+            x: distance,
+            opacity: 0,
+            scale: 0.8,
+          },
+          {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+        );
+      },
+    });
+  };
 
   const handelproductinc = () => {
     gsap.to(".pc", {
@@ -152,6 +193,32 @@ const Home = () => {
           <Link className="sm primarybtn" to={"/products"}>
             {t("sm")}
           </Link>
+        </div>
+        <div className="colors">
+          <button
+            className="color blue"
+            onClick={() => handleColorSelect("blue")}
+          />
+
+          <button
+            className="color red"
+            onClick={() => handleColorSelect("red")}
+          />
+
+          <button
+            className="color white"
+            onClick={() => handleColorSelect("white")}
+          />
+
+          <button
+            className="color black"
+            onClick={() => handleColorSelect("black")}
+          />
+
+          <button
+            className="color gray"
+            onClick={() => handleColorSelect("gray")}
+          />
         </div>
       </div>
       <div className="aboutcont">
