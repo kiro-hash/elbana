@@ -5,6 +5,7 @@ import p4 from "../assets/products/bannap (4).png";
 import p5 from "../assets/products/bannap (5).png";
 import p6 from "../assets/products/bannap (6).png";
 import p7 from "../assets/products/bannap (7).png";
+import p8 from "../assets/products/bannap (8).png";
 export interface Product {
   id: number;
   img: string;
@@ -60,7 +61,13 @@ const products: Product[] = [
     name: "p6",
     desc: "p6desc",
   },
-  
+  {
+    id: 1,
+    img: p8,
+    name: "p8",
+    desc: "p8desc",
+  }
+
 ];
 
 export default products;

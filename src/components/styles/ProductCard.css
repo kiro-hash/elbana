@@ -2,8 +2,9 @@
     position: relative;
 
     
-    min-height: 380px;
-    max-width: 390px;
+    min-height: 420px;
+    max-height: 420px;
+    max-width: 380px;
     
 
     display: flex;
