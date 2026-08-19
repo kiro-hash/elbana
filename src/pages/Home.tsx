@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import products from "../data/products";
 import NavBar from "../components/NavBar";
@@ -12,13 +12,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Seo from "../components/Seo";
-// kiro
+
 gsap.registerPlugin(useGSAP);
+
 const Home = () => {
   const { t, i18n } = useTranslation();
   const distance = window.innerWidth < 768 ? 120 : 200;
 
   const [pid, setPid] = useState(0);
+  const [selectedColor, setSelectedColor] =
+    useState<keyof typeof colorProducts>("white");
 
   const colorProducts = {
     blue: 2,
@@ -28,10 +31,21 @@ const Home = () => {
     gray: 5,
   };
 
+  const sliderProducts = ["p1", "colors", "p6", "p8"];
+
+  const currentProduct =
+    pid === 0
+      ? products[0]
+      : pid === 1
+        ? products[colorProducts[selectedColor]]
+        : pid === 2
+          ? products[6]
+          : products[7];
+
   const handleColorSelect = (
     color: keyof typeof colorProducts,
   ) => {
-    const newIndex = colorProducts[color];
+    if (color === selectedColor) return;
 
     gsap.to(".pc", {
       x: -distance,
@@ -40,7 +54,7 @@ const Home = () => {
       duration: 0.3,
       ease: "power2.in",
       onComplete: () => {
-        setPid(newIndex);
+        setSelectedColor(color);
 
         gsap.fromTo(
           ".pc",
@@ -69,7 +83,9 @@ const Home = () => {
       duration: 0.4,
       ease: "power2.in",
       onComplete: () => {
-        setPid((prev) => (prev + 1) % products.length);
+        setPid(
+          (prev) => (prev + 1) % sliderProducts.length,
+        );
 
         gsap.fromTo(
           ".pc",
@@ -100,7 +116,8 @@ const Home = () => {
       onComplete: () => {
         setPid(
           (prev) =>
-            (prev - 1 + products.length) % products.length,
+            (prev - 1 + sliderProducts.length) %
+            sliderProducts.length,
         );
 
         gsap.fromTo(
@@ -137,13 +154,17 @@ const Home = () => {
         }
         path="/"
       />
+
       <NavBar />
       <LangBtn />
 
       <div
-        className={`hero ${i18n.language === "ar" ? "inversehero" : ""}`}
+        className={`hero ${
+          i18n.language === "ar" ? "inversehero" : ""
+        }`}
       >
         <img src={heroimg} alt="" />
+
         <div className="hero-content">
           <h1>{t("heroTitle")}</h1>
 
@@ -173,9 +194,9 @@ const Home = () => {
           <div className="product-slider">
             <div className="pc">
               <ProductCard
-                img={products[pid].img}
-                name={t(products[pid].name)}
-                desc={t(products[pid].desc)}
+                img={currentProduct.img}
+                name={t(currentProduct.name)}
+                desc={t(currentProduct.desc)}
               />
             </div>
           </div>
@@ -190,49 +211,68 @@ const Home = () => {
               <ChevronRight />
             )}
           </button>
-          <Link className="sm primarybtn" to={"/products"}>
+
+          <Link className="sm primarybtn" to="/products">
             {t("sm")}
           </Link>
         </div>
-        <div className="colors">
+
+        <div
+          className={`colors ${pid === 1 ? "active" : ""}`}
+        >
           <button
-            className="color blue"
+            className={`color blue ${
+              selectedColor === "blue" ? "selected" : ""
+            }`}
             onClick={() => handleColorSelect("blue")}
           />
 
           <button
-            className="color red"
+            className={`color red ${
+              selectedColor === "red" ? "selected" : ""
+            }`}
             onClick={() => handleColorSelect("red")}
           />
 
           <button
-            className="color white"
+            className={`color white ${
+              selectedColor === "white" ? "selected" : ""
+            }`}
             onClick={() => handleColorSelect("white")}
           />
 
           <button
-            className="color black"
+            className={`color black ${
+              selectedColor === "black" ? "selected" : ""
+            }`}
             onClick={() => handleColorSelect("black")}
           />
 
           <button
-            className="color gray"
+            className={`color gray ${
+              selectedColor === "gray" ? "selected" : ""
+            }`}
             onClick={() => handleColorSelect("gray")}
           />
         </div>
       </div>
+
       <div className="aboutcont">
         <h1>{t("about")}</h1>
+
         <div className="about">
           <div className="text">
             <p>{t("aboutDescription")}</p>
-            <Link className="primarybtn" to={"/about"}>
+
+            <Link className="primarybtn" to="/about">
               {t("learnMore")}
             </Link>
           </div>
+
           <img src={heroimg} alt="" />
         </div>
       </div>
+
       <Footer />
     </>
   );
